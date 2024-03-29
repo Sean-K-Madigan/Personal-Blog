@@ -54,7 +54,7 @@ submitBtn.addEventListener('click', function (event) {
     const postInfo = {
         username: username.value,
         title: title.value,
-        post: post.value,
+        paragraph: post.value,
     }
     
     postsArray.push(postInfo);

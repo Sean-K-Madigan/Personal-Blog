@@ -8,16 +8,22 @@ const themeSlider = document.getElementById('themeSlider');
 const backBtn = document.getElementById('backBtn');
 const links = document.getElementsByClassName('links');
 const mainDiv = document.getElementsByTagName('main');
+const headerFooterDiv = document.getElementsByClassName('headFoot');
 
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
+
+    for (let i = 0; i < headerFooterDiv.length; i++) {
+        const element = headerFooterDiv[i];
+        element.classList.toggle('dark-modeHeadFoot');
+    };
 
     backBtn.classList.toggle('dark-modeBtn');
 
     for (let i = 0; i < links.length; i++) {
         const element = links[i];
-        element.classList.toggle('dark-modeLinks')
-    }
+        element.classList.toggle('dark-modeLinks');
+    };
 };
 
 themeSlider.addEventListener('click', toggleTheme);
@@ -37,20 +43,27 @@ if (!postsArray) {
 } else {
 
     for (const post of postsArray) {
+        console.log(post);
         const articleDiv = document.createElement('div');
 
-        // const title = document.createElement('h3');
-        // title.textContent = post.title;
+        const title = document.createElement('h3');
+        title.textContent = `Title: ${post.title}`;
 
         const username = document.createElement('h4');
-        username.textContent = post.username;
+        username.textContent = `Author: ${post.username}`;
 
-        // const post = document.createElement('p');
-        // post.textContent = post.post;
+        const paragraph = document.createElement('p');
+        paragraph.textContent = `-- ${post.paragraph} --`;
 
+        articleDiv.setAttribute('class', 'card');
+        title.setAttribute('class', 'postHead');
+        username.setAttribute('class', 'postHead');
+        paragraph.setAttribute('class', 'postContent');
+
+        articleDiv.appendChild(title);
         articleDiv.appendChild(username);
+        articleDiv.appendChild(paragraph);
         mainDiv[0].appendChild(articleDiv);
-        
     }
 }
 
@@ -59,6 +72,6 @@ backBtn.addEventListener('click', goBack)
 
 function goBack() {
 
-    window.location.replace('./form.html');
+    window.location.replace('./index.html');
     
 }

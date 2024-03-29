@@ -23,12 +23,14 @@ header {
   display: flex;
   justify-content: right;
   align-items: center;
+  background-color: white;
   border-bottom: var(--lightGrey) solid 4px;
   position: fixed;
   right: 0px;
   top: 0px;
   width: 100vw;
   z-index: 1;
+  transition: 0.4s;
 }
 
 /* Back button */
@@ -125,12 +127,24 @@ main {
   margin-top: 70px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 150px
 }
 
 /* Build div class styling to be able to apply it to blog content on load from localStorage*/
+.card {
+  border: solid 4px var(--lightGrey);
+  border-radius: 10px;
+  margin-bottom:10px;
+}
 
+.postHead {
+  text-align: left;
+  margin-left: 15px;
+}
 
-
+.postContent {
+  padding: 15px;
+}
 
 /* Footer Styling */
 footer {
@@ -138,8 +152,15 @@ footer {
   bottom: 0px;
   left: 0px;
   width: 100vw;
-  z-index: 1;
+  z-index: 0;
   border-top: 4px var(--lightGrey) solid;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.dark-modeHeadFoot {
+  background-color: var(--darkGrey);
+  transition: 0.4s;
 }
 
 h3, h4 {
