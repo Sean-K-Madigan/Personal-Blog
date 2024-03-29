@@ -55,6 +55,10 @@ if (!postsArray) {
 }
 
 // backBtn functionality to 
+backBtn.addEventListener('click', goBack) 
 
+function goBack() {
 
-// navigate back to the new post form
+    window.location.replace('./form.html');
+    
+}

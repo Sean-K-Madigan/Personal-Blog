@@ -26,6 +26,24 @@ header {
   border-bottom: var(--lightGrey) solid 4px;
 }
 
+.blogBtn {
+  margin: 10px 10px;
+  height: 34px;
+  width: 80px;
+  padding: 3px 8px;
+  border: 2px var(--lightGrey) solid;
+  border-radius: 20px;
+  background-color: var(--darkGrey);
+  color: var(--magenta);
+  font-size: large;
+  font-weight: 500;
+  transition: .4s;
+}
+
+.blogBtn:hover {
+  color: white;
+}
+
 /* Togle switch for light and dark mode */
 /* The switch - the box around the slider */
 .switch {

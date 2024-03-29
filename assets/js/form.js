@@ -2,12 +2,15 @@
 // Theme slider function bacground color to dark, text color to light, submit lettering and title bacground to yellow, input and text are bg dark and text light
 // Will my slider work the same as a check box
 const themeSlider = document.getElementById('themeSlider');
+const toBlogBtn = document.getElementById('blogBtn')
 const blogTitle = document.getElementById('blogTitle');
 const userInput = document.getElementsByClassName('userInput');
 const submitBtn = document.getElementById('submitBtn');
 
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
+
+    toBlogBtn.classList.toggle('dark-modeBtn')
 
     blogTitle.classList.toggle('dark-modeTitle');
 
@@ -20,6 +23,10 @@ function toggleTheme() {
 };
 
 themeSlider.addEventListener('click', toggleTheme);
+
+// navigate to blog page without submitting new post
+
+
 
 
 // Submit buton functionality
