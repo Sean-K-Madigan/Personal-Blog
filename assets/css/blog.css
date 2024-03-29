@@ -1,88 +1,180 @@
 :root {
-    --lightGrey: #8f8f8fa8;
-    --darkGrey: #3f3f3f;
-
+  --lightGrey: #8f8f8fa8;
+  --darkGrey: #3f3f3f;
+  --magenta: #b829a0;
+  --green: #1d7538;
+  --lightGreen: #a3d42f;
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'DM Sans', 'Poppins', serif;
-    font-weight: 300;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'DM Sans', 'Poppins', serif;
+  font-weight: 300;
 }
 
 body {
-    background-color: white;
+  background-color: white;
+  transition: .4s;
 }
 
 header {
-    display: flex;
-    justify-content: right;
-    border-bottom: #3f3f3f;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  border-bottom: var(--lightGrey) solid 4px;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  width: 100vw;
+  z-index: 1;
+}
+
+/* Back button */
+.backBtn {
+  height: 34px;
+  width: 60px;
+  padding: 5px 8px;
+  border: 2px var(--lightGrey) solid;
+  border-radius: 20px;
+  background-color: var(--darkGrey);
+  color: var(--magenta);
+  font-size: large;
+  font-weight: 500;
+  transition: .4s;
+}
+
+.dark-modeBtn {
+  color: var(--lightGreen);
+  background-color: var(--darkGrey);
+  transition: .4s;
+}
+
+.backBtn:hover {
+  color: white;
 }
 
 /* Togle switch for light and dark mode */
 /* The switch - the box around the slider */
 .switch {
-    margin: 10px 10px;
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+  margin: 10px 10px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
   }
   
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #3f3f3f;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: #8f8f8fa8;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #ffffff;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3f3f3f;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #8f8f8fa8;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ffffff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Main margin settings so all posts are visible on page load with aesthetically pleasing spacing */
+main {
+  margin-top: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Build div class styling to be able to apply it to blog content on load from localStorage*/
+
+
+
+
+/* Footer Styling */
+footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100vw;
+  z-index: 1;
+  border-top: 4px var(--lightGrey) solid;
+}
+
+h3, h4 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+ul {
+  margin-bottom: 10px;
+  margin-left: 20px;
+  list-style: none;
+}
+
+li a {
+  color: var(--magenta);
+  text-decoration: none;
+  transition: .4s;
+}
+
+li a:hover {
+  transform: translateX(10px);
+}
+
+.dark-modeLinks {
+  color: var(--lightGreen);
+  text-decoration: none;
+  transition: .4s;
+}
+
+.dark-mode {
+  background-color: var(--darkGrey);
+  color: white;
+  transition: .4s;
+}
