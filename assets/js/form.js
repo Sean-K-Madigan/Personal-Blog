@@ -26,8 +26,11 @@ themeSlider.addEventListener('click', toggleTheme);
 
 // navigate to blog page without submitting new post
 
+toBlogBtn.addEventListener('click', toBlog)
 
-
+function toBlog() {
+    window.location.replace('./blog.html')
+}
 
 // Submit buton functionality
 
